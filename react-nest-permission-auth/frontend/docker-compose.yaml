@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api:
+    build: .
+    command: "yarn run dev"
+    container_name: "auth-frontend-dev"
+    expose:
+      - "5173:5173"
+    ports:
+      - "5173:5173"
+    volumes:
+      - "./:/app"
+    environment:
+      - PORT=5173
