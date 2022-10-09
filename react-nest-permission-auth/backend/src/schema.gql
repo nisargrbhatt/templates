@@ -1,0 +1,77 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  _id: String!
+
+  """First Name"""
+  firstName: String!
+
+  """Last Name"""
+  lastName: String!
+
+  """Nickname to be called by the system"""
+  displayName: String
+
+  """Email"""
+  email: String!
+
+  """Password"""
+  password: String!
+
+  """Phone number of user"""
+  phoneNumber: String
+}
+
+type Query {
+  users: [User!]!
+  user(id: String!): User!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: String!): User!
+}
+
+input CreateUserInput {
+  """First Name"""
+  firstName: String!
+
+  """Last Name"""
+  lastName: String!
+
+  """Nickname to be called by the system"""
+  displayName: String
+
+  """Email"""
+  email: String!
+
+  """Password"""
+  password: String!
+
+  """Phone number of user"""
+  phoneNumber: String
+}
+
+input UpdateUserInput {
+  """First Name"""
+  firstName: String
+
+  """Last Name"""
+  lastName: String
+
+  """Nickname to be called by the system"""
+  displayName: String
+
+  """Email"""
+  email: String
+
+  """Password"""
+  password: String
+
+  """Phone number of user"""
+  phoneNumber: String
+  id: String!
+}

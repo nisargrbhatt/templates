@@ -11,7 +11,9 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidatePipe());
   // app.useLogger(app.get(Logger));
-  app.use(helmet());
+  if (process?.env?.NODE_ENV === 'production') {
+    app.use(helmet());
+  }
 
   const config = new DocumentBuilder()
     .setTitle('Nest Permission Auth')
